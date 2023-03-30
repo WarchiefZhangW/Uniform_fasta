@@ -75,7 +75,7 @@ def uniform_data_mp(t):
     for i,(name,seq) in enumerate(read_fasta(sys.argv[1])):
         #print(name, i)
         old_data.append((i, name, seq))
-        if i % t*4 == 0 and i != 0:
+        if i % (t*100) == 0 and i != 0:
             print('\r', 'Uniformed {} reads...'.format(i), end = '')
             p = mp.Pool(processes = t)
             new_data = p.map(uniform_data, old_data)
