@@ -25,6 +25,7 @@ def read_fasta(file_name):#a generator read the fasta file
                                 if name != '':
                                         yield name, seq
                                 name = line.split()[0][1:]
+                                seq = ''
                         if line[0]!='>':
                                 seq += line.strip()
         yield name, seq
